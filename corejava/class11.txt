@@ -1,0 +1,238 @@
+System.out.println()
+=====================
+It is a output statement in java. 
+
+Whenever we want to display any userdefined statements or data then we need to use output stmt.
+
+syntax:
+-------
+	   static variable 
+		|
+	System.out.println();
+	|		|
+predefined 		predefined method 
+final class 
+
+Diagram: class11.1
+
+ex:
+----
+class Test 
+{
+	public static void main(String[] args)
+	{
+		System.out.println("stmt1");
+		System.out.println("stmt2");
+	}
+}
+o/p:
+	stmt1
+	stmt2
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args)
+	{
+		System.out.print("stmt1");
+		System.out.print("stmt2");
+	}
+}
+o/p:
+	stmt1stmt2
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args)
+	{
+		float f = 25.678912f;
+		System.out.printf("%.2f",f); 	
+	}
+}
+
+Various ways to display the data in java
+----------------------------------------
+1)
+	System.out.println("Hello World");
+
+
+2) 
+	int a = 10;
+	System.out.println(a);
+	System.out.println("The value is ="+a);
+
+3) 
+	int a=10,b=20;
+	System.out.println(a+" "+b);
+	System.out.println(a+" and "+b);
+
+
+4) 
+	int i=1,j=2,k=3;
+	System.out.println(i+" "+j+" "+k);
+
+
+
+Q) What is difference between System.out.println() and System.err.println() ?
+
+System.out.println()
+---------------------
+It is used to display the standard text.
+
+It is used to display the output only on console.
+
+
+System.err.println()
+-------------------
+It is used to display the error text.
+
+It is used to display the output on console as well as it will redirect to physical file.
+
+
+
+Java Source File Structure 
+==========================
+case1:
+------
+	A java program can have multiple classes.
+
+case2:
+------
+	If a java program contains multiple classes then we need to check which class having main
+	method and that class treated as main class.
+	ex:
+		Test.java
+		-----------
+
+		class A 
+		{
+			- // some logic 
+		}
+		class Test 
+		{
+			public static void main(String[] args)
+			{	
+				- //some logic 
+			}
+		}
+
+case3:
+------
+	If multiple classes contains main method then we can save that program name with any name.
+	
+	ex:
+		Ihub.java
+		----------
+		class A 
+		{
+			public static void main(String[] args)
+			{
+				System.out.println("A-class");	
+			}
+		}
+		class B 
+		{
+			public static void main(String[] args)
+			{
+				System.out.println("B-class");	
+			}
+		}
+		class C 
+		{
+			public static void main(String[] args)
+			{
+				System.out.println("C-class");	
+			}
+		}
+	
+		If we compile above program we will get three .class files i.e 
+		A.class,B.class and C.class.
+		ex:
+			javac   Ihub.java
+		
+		To execute above program we need to use below command.
+		ex:
+			java   A (A class will execute)
+			java   B (B class will execute)
+			java   C (C class will execute)
+		
+case4:
+------
+	If multiple classes contains main method then we need to declare any one class public. 
+	That public class treated as main class and we need to save our program name with public class
+	name only.
+	ex:
+		A.java
+		----------
+		public class A 
+		{
+			public static void main(String[] args)
+			{
+				System.out.println("A-class");	
+			}
+		}
+		class B 
+		{
+			public static void main(String[] args)
+			{
+				System.out.println("B-class");	
+			}
+		}
+		class C 
+		{
+			public static void main(String[] args)
+			{
+				System.out.println("C-class");	
+			}
+		}
+	
+		If we compile above program we will get three .class files i.e 
+		A.class,B.class and C.class.
+		ex:
+			javac   Ihub.java
+		
+		To execute above program we need to use below command.
+		ex:
+			java   A (A class will execute)
+			java   B (B class will execute)
+			java   C (C class will execute)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

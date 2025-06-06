@@ -1,0 +1,209 @@
+Var-Arg Method 
+===============
+Before 1.5 version it is not possible to declare a method with variable number of arguments.
+
+But from 1.5 version onwards it is possible to declare a method with variable number of arguments.
+
+We can declare var-arg method as follow.
+ex:
+			var-arg parameter 
+			    |
+                       ---------
+	void methodOne(int...  i)
+                           |
+			ellipse 
+
+	Here var-arg parameter is a replacement of single dimensional array.
+	ex:
+		... --------------> [] 
+
+
+We can invoke var-arg method with any number of integer values including zero.
+
+ex:
+----
+class Test
+{
+	public static void main(String[] args)
+	{
+		methodOne();
+	}
+	public static void methodOne()
+	{
+		System.out.println("M1-Method");
+	}
+}
+
+ex:
+---
+class Test
+{
+	public static void main(String[] args)
+	{
+		methodOne(10);
+	}
+	public static void methodOne(int i)
+	{
+		System.out.println("M1-Method");
+	}
+}
+
+ex:
+---
+class Test
+{
+	public static void main(String[] args)
+	{
+		methodOne();
+		methodOne(10);
+		methodOne(10,20);
+		methodOne(10,20,30);
+	}
+	public static void methodOne(int... i)
+	{
+		System.out.println("var-arg method");
+	}
+}
+
+case1:
+------
+	We can mix var-arg parameter with general parameter.
+	ex:
+		methodOne(int x,int... y)
+
+case2:
+-----
+	If we mix var-arg parameter with general parameter then var-arg parameter must be last
+	parameter.
+	ex:	
+		methodOne(int  x,int... y)   //valid 
+		methodOne(int...  x,int  y)  //invalid 
+
+case3:
+-------
+	A var-arg method can have only one var-arg parameter.
+	ex:
+		methodOne(int... x)
+		methodOne(int... x,int... y)  //invalid 
+
+
+
+
+Fully Qualified Name 
+=====================
+Fully qualified name means we will declare a class or interface along with package name.
+ex:
+	java.io.File (C)
+	java.io.Serializable (I)  
+
+Fully qualified name will improve readability of our code.
+
+We need to use fully qualified name when a class present in two different packages.
+
+ex:
+---
+class Test
+{
+	public static void main(String[] args)
+	{
+		java.util.Date d=new java.util.Date();
+		System.out.println(d); 
+	}
+}
+
+
+Import statement 
+=================
+Whenever we use import statement we should not use fully qualified name.
+
+Using short name also we can achieve.
+
+We have three types of import statements in java.
+
+1) Explicit class import 
+
+2) Implicit class import 
+
+3) Static import 
+
+1) Explicit class import 
+------------------------
+This type of import statement is highly recommanded to use because it will increase readability of our code.
+
+ex:
+----
+import java.util.Date;
+class Test
+{
+	public static void main(String[] args)
+	{
+		Date d = new Date();
+		System.out.println(d); 
+	}
+}
+
+ex:
+---
+import java.time.LocalDate;
+class Test
+{
+	public static void main(String[] args)
+	{
+		LocalDate d = LocalDate.now();
+		System.out.println(d);
+	}
+}
+
+ex:
+---
+import java.time.LocalDate;
+import java.time.LocalTime;
+class Test
+{
+	public static void main(String[] args)
+	{
+		LocalDate d = LocalDate.now();
+		System.out.println(d);
+
+		LocalTime t = LocalTime.now();
+		System.out.println(t); 
+	}
+}
+
+
+Interview Questions 
+====================
+Q) How many classes are there in java?
+
+
+	Java 7 	- 4024 classes 
+	Java 8  - 4240 classes
+	Java 9  - 6005 classes 
+	Java 10 - 6002 classes   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
